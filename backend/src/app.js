@@ -2,7 +2,8 @@ import express from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import authRoutes from "./routes/auth.routes.js";
-import profileRoutes from "./routes/companyprofile.routes.js";
+import companyRoutes from "./routes/companyprofile.routes.js";
+import jobListingRoutes from "./routes/jobListing.routes.js";
 
 
 // Creating App
@@ -26,6 +27,7 @@ app.use(express.urlencoded({ extended: true, limit: "16kb" }));
 app.use(cookieParser());
 
 app.use('/api/auth', authRoutes);
-app.use('/api/profile', profileRoutes);
+app.use('/api/profile', companyRoutes);
+app.use('/api', jobListingRoutes);
 
 export { app };
