@@ -4,7 +4,7 @@ import cors from "cors";
 import authRoutes from "./routes/auth.routes.js";
 import companyRoutes from "./routes/companyprofile.routes.js";
 import jobListingRoutes from "./routes/jobListing.routes.js";
-
+import jobSeekerRoutes from "./routes/jobseeker.routes.js";
 
 // Creating App
 const app = express();
@@ -26,8 +26,9 @@ app.use(express.urlencoded({ extended: true, limit: "16kb" }));
 // Adding Cookie Parser Middleware
 app.use(cookieParser());
 
-app.use('/api/auth', authRoutes);
-app.use('/api/profile', companyRoutes);
-app.use('/api', jobListingRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/profile", companyRoutes);
+app.use("/api/company", jobListingRoutes);
+app.use("/api/profile", jobSeekerRoutes)
 
 export { app };
