@@ -45,7 +45,7 @@ router.post("/job", authenticate, authorize(["Company"]), async (req, res) => {
 // Get Job Listings for a Company
 router.get("/jobs", authenticate, authorize(["Company"]), async (req, res) => {
   try {
-    const company = await Company.findOne({ userId: req.user.userId });
+    const company = await Company.findOne({ userId: req.user._id });
     if (!company) {
       return res.status(404).send({ message: "Company profile not found" });
     }
