@@ -33,8 +33,6 @@ router.post("/login", async (req, res) => {
       process.env.JWT_SECRET
     );
 
-    console.log("token");
-    console.log(token);
     res.send({ token: token,
       user: {
         _id: user._id,
