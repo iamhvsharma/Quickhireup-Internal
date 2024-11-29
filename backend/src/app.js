@@ -5,6 +5,9 @@ import authRoutes from "./routes/auth.routes.js";
 import companyRoutes from "./routes/companyprofile.routes.js";
 import jobListingRoutes from "./routes/jobListing.routes.js";
 import jobSeekerRoutes from "./routes/jobseeker.routes.js";
+import mentorRoutes from "./routes/mentor.routes.js";
+import memtorshipListingRoutes from "./routes/mentorshipListing.routes.js";
+import mentorshipListingRoutes from "./routes/mentorshipListing.routes.js";
 
 // Creating App
 const app = express();
@@ -26,9 +29,22 @@ app.use(express.urlencoded({ extended: true, limit: "16kb" }));
 // Adding Cookie Parser Middleware
 app.use(cookieParser());
 
+// Auth Route Signup login
 app.use("/api/auth", authRoutes);
+
+// Company Profile Creation Routes
 app.use("/api/profile", companyRoutes);
+
+// Job Listing Route for Company
 app.use("/api/company", jobListingRoutes);
-app.use("/api/profile", jobSeekerRoutes)
+
+// Job Seeker Profile Creation Route
+app.use("/api/profile", jobSeekerRoutes);
+
+// Mentor Profile Creation Route
+app.use("/api/profile", mentorRoutes);
+
+// Mentorship Listing Route
+app.use("/api/listing", mentorshipListingRoutes);
 
 export { app };
