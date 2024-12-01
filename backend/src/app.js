@@ -8,6 +8,8 @@ import jobSeekerRoutes from "./routes/jobseeker.routes.js";
 import mentorRoutes from "./routes/mentor.routes.js";
 import memtorshipListingRoutes from "./routes/mentorshipListing.routes.js";
 import mentorshipListingRoutes from "./routes/mentorshipListing.routes.js";
+import studentRoutes from "./routes/student.routes.js";
+
 
 // Creating App
 const app = express();
@@ -41,10 +43,15 @@ app.use("/api/company", jobListingRoutes);
 // Job Seeker Profile Creation Route
 app.use("/api/profile", jobSeekerRoutes);
 
+// Student Profile Creation Route
+app.use("/api/profile", studentRoutes);
+
+
 // Mentor Profile Creation Route
 app.use("/api/profile", mentorRoutes);
 
 // Mentorship Listing Route
 app.use("/api/listing", mentorshipListingRoutes);
+
 
 export { app };
