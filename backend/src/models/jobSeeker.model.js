@@ -78,6 +78,7 @@ const jobSeekerSchema = new mongoose.Schema(
     verificationCode: { type: String },
 
     // Profile Dashboard Details
+    avatar: { type: String }, // Cloudinary URL
     openRoles: [{ type: String }], // Array of roles user is open to
     bio: { type: String, maxlength: 1000 }, // Free-text bio
     experience: [
